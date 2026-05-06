@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet Pawpedia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Inter:wght@400;600&family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">
+      <img src="paw.png" alt="paw logo" class="paw-logo">
+      <h1>Pet Pawpedia</h1>
+    </div>
+
+   <nav>
+  <ul>
+    <li><a href="#shelter">Shelter</a></li>
+    <li><a href="#tips">Pet Care Tips</a></li>
+    <li><a href="#plants">Toxic Plants</a></li>
+    <li><a href="#vision">Dog Vision</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+
+ <!-- 第一页 带狗狗图片 介绍-->
+<section id="home" class="hero parallax-scene">
+  <div class="hero-text">
+    <h2>Welcome to Pet Pawpedia</h2>
+    <p>
+      A simple guide to understanding and caring for your pets.
+      Here, you'll find practical information on nutrition, exercise, grooming, and health for both cats and dogs—designed especially for new pet owners.
+    </p>
+
+    <div class="scroll-indicator">
+      <p>Scroll down to explore more</p>
+      <span class="arrow"></span>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <span class="circle circle-yellow parallax-layer" data-speed="14"></span>
+    <span class="circle circle-blue parallax-layer" data-speed="18"></span>
+    <span class="circle circle-green parallax-layer" data-speed="10"></span>
+
+    <img src="dog1.png" alt="pet image" class="parallax-dog" data-speed="6" />
+  </div>
+</section>
+
+   
+
+    <!--  Chart Section -->
+      <section id="shelter"class="shelter-stats-section reveal-on-scroll">
+        <h2>2024 Animal Shelter Statistics</h2>
+
+        <p class="shelter-stats-intro">
+          In 2024, approximately <strong>5.8 million</strong> dogs and cats entered shelters and rescues.
+          While <strong>4.2 million</strong> animals were adopted, shelters continued to face capacity challenges.
+        </p>
+
+        <div class="shelter-chart-wrapper">
+          <canvas id="animalOutcomeChart"></canvas>
+        </div>
+
+            <div class="euthanasia-layout">
+
+        <!-- Left Text -->
+        <div class="euthanasia-text">
+
+          <p class="euthanasia-label">
+            Shelter Progress
+          </p>
+
+          <h3>
+            Euthanasia rates in shelters have continued to decline over the past five years.
+          </h3>
+
+          <p>
+            In 2019, approximately <strong>13%</strong> of shelter animals were euthanized.
+            By 2024, that number had decreased to around <strong>8%</strong>.
+          </p>
+
+          <p>
+            Although shelters nationwide still face overcrowding and capacity challenges,
+            increased adoption efforts and rescue support have helped improve outcomes for many animals.
+          </p>
+
+        </div>
+
+        <!-- Right Chart -->
+        <div class="shelter-chart-wrapper small-chart">
+          <canvas id="euthanasiaRateChart"></canvas>
+        </div>
+
+      </div>
+      </section>
+
+
+    <!-- Pet Shelter Intake Section -->
+<section class="intake-section reveal-on-scroll">
+
+  <div class="intake-layout">
+
+    <!-- Left: Chart -->
+    <div class="intake-chart-side">
+      <div class="chart-wrapper">
+        <canvas id="intakeChart"></canvas>
+      </div>
+
+      <p class="chart-note">
+        *Community intakes tally all intakes except transfers to ensure a clear count of animals received
+        directly from the community, avoiding double counting during total intake calculations.
+      </p>
+    </div>
+
+    <!-- Right: Text -->
+    <div class="intake-text-side">
+
+      <p class="intake-label">2024 Shelter Intake</p>
+
+      <h2 class="intake-big-number">5.7M</h2>
+
+      <p class="intake-big-subtitle">
+        dogs and cats entered shelters and rescues nationwide
+      </p>
+
+      <div class="intake-stat-grid">
+
+        <div class="intake-stat-card">
+          <span class="stat-number">1%</span>
+          <span class="stat-text">
+            fewer intakes<br>than 2023
+          </span>
+        </div>
+
+        <div class="intake-stat-card">
+          <span class="stat-number">11%</span>
+          <span class="stat-text">
+            decline since<br>2019
+          </span>
+        </div>
+
+      </div>
+
+      <div class="intake-description">
+        <p>
+          Community intakes for dogs and cats decreased by approximately
+          <strong>83,000 animals</strong> compared to 2023.
+        </p>
+
+        <p>
+          Shelter intakes are now evenly split between dogs and cats,
+          though shelters nationwide continue to face significant capacity challenges.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+   <!-- Pet Care Tips / Hydration Section -->
+  <section id="tips" class="hydration-section reveal-on-scroll">
+
+  <!-- Transition Intro -->
+  <div class="adoption-transition">
+
+    <h2>After Adoption, What Comes Next?</h2>
+
+    <p class="adoption-text">
+      Bringing a dog home is only the beginning of the journey.
+      Beyond providing food and shelter, dogs rely on daily care,
+      exercise, hydration, medical attention, and emotional companionship
+      to live healthy and happy lives.
+    </p>
+
+    <p class="adoption-text">
+      Understanding their basic needs can help owners create a safer,
+      more comfortable environment and build a stronger lifelong bond
+      with their pets.
+    </p>
+
+  </div>
+
+  <!-- Hydration Title -->
+  <div class="hydration-header">
+
+    <h2>Key Guidelines for Canine Hydration</h2>
+
+    <div class="hydration-title-line"></div>
+
+    <p class="hydration-intro">
+      The average healthy dog needs
+      <strong>1–1.25 ounces</strong> of water per pound daily,
+      or roughly <strong>60–90 mL/kg.</strong>
+    </p>
+
+  </div>
+
+  <!-- Hydration Cards -->
+  <div class="hydration-grid">
+
+    <!-- 10 lbs -->
+    <div class="hydration-card">
+      <div class="dog-circle dog-small">
+        <span class="dog-silhouette">🐕</span>
+      </div>
+
+      <div class="weight-label">10 lbs</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">
+        <span class="water-icon">💧</span>
+        ~10 oz
+      </p>
+
+      <p class="cup-amount">
+        <span class="cup-icon">🥛</span>
+        ~1.25 cups/day
+      </p>
+
+      <div class="bowl-wrap">
+        <span class="splash splash-left"></span>
+        <span class="splash splash-right"></span>
+        <div class="dog-bowl">
+          <div class="water-surface"></div>
+          <div class="paw">🐾</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30 lbs -->
+    <div class="hydration-card">
+      <div class="dog-circle dog-medium">
+        <span class="dog-silhouette">🐕</span>
+      </div>
+
+      <div class="weight-label">30 lbs</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">
+        <span class="water-icon">💧</span>
+        ~30 oz
+      </p>
+
+      <p class="cup-amount">
+        <span class="cup-icon">🥛</span>
+        ~3.75 cups/day
+      </p>
+
+      <div class="bowl-wrap">
+        <span class="splash splash-left"></span>
+        <span class="splash splash-right"></span>
+        <div class="dog-bowl">
+          <div class="water-surface"></div>
+          <div class="paw">🐾</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 50 lbs -->
+    <div class="hydration-card">
+      <div class="dog-circle dog-large">
+        <span class="dog-silhouette">🐕</span>
+      </div>
+
+      <div class="weight-label">50 lbs</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">
+        <span class="water-icon">💧</span>
+        ~50 oz
+      </p>
+
+      <p class="cup-amount">
+        <span class="cup-icon">🥛</span>
+        ~6.25 cups/day
+      </p>
+
+      <div class="bowl-wrap">
+        <span class="splash splash-left"></span>
+        <span class="splash splash-right"></span>
+        <div class="dog-bowl">
+          <div class="water-surface"></div>
+          <div class="paw">🐾</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Increased Needs -->
+    <div class="hydration-card hydration-info-card">
+      <div class="dog-circle dog-medium">
+        <span class="dog-silhouette">☀️</span>
+      </div>
+
+      <div class="weight-label">Increased Needs</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">Active Days</p>
+
+      <p class="cup-amount">
+        High activity levels, hot weather, dry kibble diets, and pregnancy can increase daily water needs.
+      </p>
+
+      <p class="hydration-mini-note">
+        Puppies may need about 0.5 cups of water every 2 hours.
+      </p>
+    </div>
+
+    <!-- Hydration Tips -->
+    <div class="hydration-card hydration-info-card">
+      <div class="dog-circle dog-medium">
+        <span class="dog-silhouette">🚰</span>
+      </div>
+
+      <div class="weight-label">Hydration Tips</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">Fresh Water</p>
+
+      <p class="cup-amount">
+        Always provide clean water throughout the day. Do not restrict water unless directed by a veterinarian.
+      </p>
+
+      <p class="hydration-mini-note">
+        Bring extra water when traveling or spending time outdoors.
+      </p>
+    </div>
+
+    <!-- Dehydration Signs -->
+    <div class="hydration-card hydration-info-card">
+      <div class="dog-circle dog-medium">
+        <span class="dog-silhouette">⚠️</span>
+      </div>
+
+      <div class="weight-label">Watch Signs</div>
+      <div class="card-line"></div>
+
+      <p class="water-amount">Dehydration</p>
+
+      <p class="cup-amount">
+        Signs may include lethargy, dry gums, decreased appetite, or unusual tiredness.
+      </p>
+
+      <p class="hydration-mini-note">
+        Contact a vet if symptoms seem serious or persistent.
+      </p>
+    </div>
+
+  </div>
+
+  <p class="hydration-note">
+    💧 These are general guidelines. Individual needs may vary based on age,
+    activity level, diet, climate, and overall health. Always ensure fresh water is available.
+  </p>
+</section>
+
+
+
+
+
+<!-- =====================================
+     Daily Care Tips Cards
+===================================== -->
+
+<div class="daily-care-grid">
+
+  <!-- Regular Feeding -->
+  <article class="daily-care-card">
+
+    <div class="daily-care-icon">🍽️</div>
+
+    <h3>Regular Feeding</h3>
+
+    <p>
+        Feed your dog on a consistent daily schedule with balanced nutrition and appropriate portion sizes based on their age, size, and activity level.
+         Most adult dogs are typically fed 1-2 times per day, while puppies may require smaller and more frequent meals to support healthy growth and energy.
+    </p>
+
+  </article>
+
+  <!-- Daily Exercise -->
+  <article class="daily-care-card">
+
+    <div class="daily-care-icon">🎾</div>
+
+    <h3>Daily Exercise</h3>
+
+    <p>
+       Most dogs benefit from at least 30-60 minutes of daily exercise, depending on their breed, age, and energy level. Daily walks, playtime, and outdoor activities help keep dogs physically healthy, mentally stimulated, and emotionally happy.
+    </p>
+
+  </article>
+
+  <!-- Vet Checkups -->
+  <article class="daily-care-card">
+
+    <div class="daily-care-icon">🩺</div>
+
+    <h3>Vet Checkups</h3>
+
+    <p>
+        Routine veterinary visits can help identify health concerns early
+        and support long-term wellness. Regular checkups, vaccinations,
+        dental care, and parasite prevention all play an important role
+        in keeping your dog healthy throughout different stages of life.
+    </p>
+
+  </article>
+
+  <!-- Grooming Care -->
+  <article class="daily-care-card">
+
+    <div class="daily-care-icon">✂️</div>
+
+    <h3>Grooming Care</h3>
+
+    <p>
+       Regular brushing, bathing, nail trimming, and coat care help keep
+        your dog clean, comfortable, and healthy. Grooming also helps reduce
+        shedding, prevents matting, and allows owners to notice potential skin
+        issues or abnormalities early.
+    </p>
+
+  </article>
+
+</div>
+    </section>
+
+
+
+
+   <!-- Toxic Plants Section -->
+<section id="plants" class="plants-section reveal-on-scroll">
+
+  <div class="plants-content">
+
+    <h2>Common Toxic Plants for Dogs</h2>
+
+    <div class="toxic-warning">
+      ⚠️ <strong>Important:</strong> If you suspect your dog has ingested any toxic plant, seek immediate veterinary care.
+    </div>
+
+    <p class="plants-intro">
+      Many common household and garden plants can be harmful to dogs, ranging from mild stomach upset to severe or life-threatening poisoning.
+      Some of the most dangerous examples include <strong>Sago Palm, Oleander, Azaleas, Lilies,</strong> and <strong>Castor Oil Plant</strong>.
+    </p>
+
+    <div class="toxic-image-wrapper">
+      <img src="most dangerous plant.png" alt="Infographic showing common toxic plants for dogs">
+    </div>
+
+    <div class="plant-category-grid">
+
+      <div class="plant-category-card">
+        <h3>Houseplants</h3>
+        <p>Aloe vera, Snake plant, Pothos, Jade plant, Peace lilies, and Dracaena.</p>
+         <div class="toxic-image-wrapper">
+        <img src="houseplant.png" alt="houseplant">
+        </div>
+      </div>
+
+      <div class="plant-category-card">
+        <h3>Garden Plants</h3>
+        <p>Oleander, Azaleas/Rhododendrons, Sago palm, Foxglove, Hydrangeas, and Yew.</p>
+         <div class="toxic-image-wrapper">
+        <img src="gardenplant.png" alt="garden">
+        </div>
+      </div>
+
+      <div class="plant-category-card">
+        <h3>Flowers & Bulbs</h3>
+        <p>Tulips, Hyacinths, Daffodils, and Lily of the Valley.</p>
+         <div class="toxic-image-wrapper">
+        <img src="flowers.png" alt="flowers">
+        </div>
+      </div>
+
+      <div class="plant-category-card">
+        <h3>Other Plants</h3>
+        <p>English Ivy, Rhubarb, Onion, Garlic, and Hemlock.</p>
+         <div class="toxic-image-wrapper">
+        <img src="otherplant.png" alt="other">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- symptom card -->
+    <section class="symptom-card-section">
+    <div class="symptom-card">
+      <div class="symptom-card-header">
+        <h2>Toxic Plant Symptoms in Dogs</h2>
+        <p>
+        Common signs to watch for if your dog may have eaten a toxic plant.
+      </p>
+    </div>
+
+    <div class="symptom-grid">
+      <div class="symptom-item">
+        <div class="symptom-icon">🤢</div>
+        <div class="symptom-text">
+          <h3>Vomiting or diarrhea</h3>
+          <p>Upset stomach is one of the most common early signs.</p>
+        </div>
+      </div>
+
+      <div class="symptom-item">
+        <div class="symptom-icon">💧</div>
+        <div class="symptom-text">
+          <h3>Excessive drooling</h3>
+          <p>Dogs may drool more than usual after chewing toxic leaves or stems.</p>
+        </div>
+      </div>
+
+      <div class="symptom-item">
+        <div class="symptom-icon">😞</div>
+        <div class="symptom-text">
+          <h3>Lethargy or weakness</h3>
+          <p>Your dog may seem unusually tired, quiet, or less active.</p>
+        </div>
+      </div>
+
+      <div class="symptom-item">
+        <div class="symptom-icon">🌬️</div>
+        <div class="symptom-text">
+          <h3>Difficulty breathing</h3>
+          <p>Breathing changes may signal a more serious reaction.</p>
+        </div>
+      </div>
+
+      <div class="symptom-item">
+        <div class="symptom-icon">❤️</div>
+        <div class="symptom-text">
+          <h3>Abnormal heart rate</h3>
+          <p>Some toxic plants can affect the heart and circulation.</p>
+        </div>
+      </div>
+
+      <div class="symptom-item danger">
+        <div class="symptom-icon">⚠️</div>
+        <div class="symptom-text">
+          <h3>Tremors or seizures</h3>
+          <p>Seek emergency veterinary care right away if these appear.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-note">
+      <span class="note-icon">📞</span>
+      <p>
+       If you suspect your dog has eaten a toxic plant, call your veterinarian immediately 
+        or the ASPCA Animal Poison Control Center at (888) 426-4435.
+      </p>
+    </div>
+  </div>
+</section>
+    
+
+    <!-- Dog Vision Section -->
+  <section id="vision" class="dog-color-section reveal-on-scroll">
+  <div class="dog-color-content">
+
+    <h2>What Colors Can Dogs See</h2>
+
+    <p class="dog-color-intro">
+      Dogs can generally detect <strong>black and white</strong> in terms of light and dark contrast.
+      They can also detect <strong>yellow and blue</strong>, including different shades of those colors.
+    </p>
+
+    <!-- Block 1 -->
+    <div class="color-block">
+
+      <div class="color-grid">
+        <div class="color-square black"></div>
+        <div class="color-square white"></div>
+        <div class="color-square yellow"></div>
+        <div class="color-square blue"></div>
+      </div>
+
+    </div>
+
+    <!-- Block 2 -->
+    <div class="color-block">
+      <h2>Colors Dogs See Differently</h2>
+      <p class="dog-color-intro">
+            Dogs cannot distinguish <strong>red and green</strong> the same way humans do because they only have two types of cones. Their color perception is similar to <strong>red-green color vision deficiency</strong> in humans, while shades of <strong>yellow and blue</strong> appear much more vibrant to them.
+       </p>
+  
+      <div class="color-grid">
+        <div class="color-square red muted"></div>
+        <div class="color-square green muted"></div>
+      </div>
+
+    </div>
+
+    <div class="dog-vision-content">
+      
+
+      <div class="vision-block">
+
+      <h2>Through Your Dog's Eyes</h2>
+
+      <!-- 第一张：狗狗视角 -->
+      <img 
+        src="dog vision1.jpg" 
+        alt="Normal human color vision" 
+        class="dog-vision-image parallax-dog"
+        data-speed="6"/>
+
+      <p>
+        Dogs see the world with less color variety than humans, but they are still very good at
+        detecting <strong>motion and contrast</strong>.
+      </p>
+
+      <!-- 第二张：狗狗视角 -->
+      <img 
+        src="dog vision2.jpg" 
+        alt="Dog color vision perspective" 
+        class="dog-vision-image parallax-dog"
+        data-speed="6"/>
+
+</div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- 结尾 -->
+    <section class="dog-life-section reveal-on-scroll">
+
+      <div class="dog-life-content">
+
+        <p class="dog-life-text">
+          Dogs typically live between <strong>10-15 years</strong>, and some may even live 
+          <strong>18-20 years</strong> with proper care, a healthy lifestyle, and lots of love. 
+          Their lifespan can vary depending on breed, size, health, and daily habits. 
+          Although their lives may feel short compared to ours, the time we spend with them 
+          often becomes some of the most meaningful and unforgettable moments in our lives.
+        </p>
+
+        <p class="dog-life-text">
+          Whether it is a quiet walk in the morning, a game of fetch in the park, or simply 
+          resting beside you at the end of the day, dogs have a special way of reminding us 
+          to slow down and appreciate life's small moments. We hope every dog can grow up 
+          surrounded by love, comfort, and companionship — and that every owner can cherish 
+          the beautiful memories they create together throughout their journey.
+        </p>
+
+        <div class="dog-life-heart">
+          🐾 ❤
+        </div>
+
+        <!-- 狗狗图片 -->
+        <div class="dog-life-image-wrapper">
+          <img 
+            src="play dog.png" 
+            alt="Dogs playing together" 
+            class="dog-life-image"
+            data-speed="6"
+          />
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Pet Pawpedia. All rights reserved.</p>
+    <p>Basic pet health education for new pet owners.</p>
+  </footer>
+
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
